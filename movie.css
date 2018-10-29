@@ -433,7 +433,7 @@ body{font-size:14px;line-height:1.4;color:#555;overflow-x:hidden;background-colo
 @media(max-width:1024px){.article-title{font-size:20px}}@media(max-width:768px){.article-meta{font-size:12px}
 .article-meta .item{margin-right:10px}}@media(max-width:544px){.article-title{font-size:18px;margin-bottom:5px}
 .article-meta{margin-bottom:10px}}.article-content{font-size:15px;line-height:0px;word-wrap:break-word}
-@media(max-width:544px){.article-content{font-size:14px !important;line-height:1.4 !important}}.article-content:before,.article-content:after{display:table;content:"";line-height:0}
+@media(max-width:544px){.article-content{font-size:14px !important;}}.article-content:before,.article-content:after{display:table;content:"";line-height:0}
 .article-content:after{clear:both}
 .article-content img{display:block;max-width:100%;height:auto}
 .article-content h1,.article-content h2,.article-content h3,.article-content h4,.article-content h5,.article-content h6,.article-content p{margin:0 0 25px}
