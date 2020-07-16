@@ -46,10 +46,10 @@ m3u8=urls[num1][num2];var video=document.getElementById('video');if(Hls.isSuppor
 var hlsjsConfig={maxBufferLength:9999999999999,maxBufferSize:9999999999999,maxMaxBufferLength:9999999999999,fragLoadingTimeOut:1000,manifestLoadingTimeOut:1000,levelLoadingTimeOut:1000,levelLoadingMaxRetry:30,levelLoadingMaxRetryTimeout:1000,fragLoadingMaxRetry:30,fragLoadingMaxRetryTimeout:1000,manifestLoadingMaxRetry:30,manifestLoadingRetryDelay:1000,liveSyncDurationCount:10,loader:engine.createLoaderClass()};hls=new Hls(hlsjsConfig);p2pml.hlsjs.initHlsJsPlayer(hls);hls.loadSource(m3u8);hls.attachMedia(video);hls.on(Hls.Events.MANIFEST_PARSED,function(){video.play();});hls.once(Hls.Events.ERROR,function(event,data){switch(data.details){case"manifestLoadError":errorcount++;if(errorcount<30)
 {play(num1,num2);}
 if(errorcount==30)
-{$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'m3u8加载失败 '+m3u8});hls.destroy();}
+{$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'m3u8加载失败 '+m3u8});hls.destroy();errorcount=0;lgyPl_v2.toast("资源暂时无法播放,请切换资源!",5);}
 break;case"keyLoadError":errorcount++;play(num1,num2);if(errorcount==30)
-{$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'key加载失败 '+m3u8});hls.destroy();}
-break;case"manifestParsingError":$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'m3u8清单错误 '+m3u8});hls.destroy();break;default:break;}});}
+{errorcount=0;$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'key加载失败 '+m3u8});hls.destroy();lgyPl_v2.toast("资源暂时无法播放,请切换资源!",5);}
+break;case"manifestParsingError":$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'m3u8清单错误 '+m3u8});hls.destroy();lgyPl_v2.toast("资源暂时无法播放,请切换资源!",5);break;default:break;}});}
 else if(video.canPlayType('application/vnd.apple.mpegurl')||m3u8.indexOf(".mp4")!=-1){video.src=m3u8;video.addEventListener('loadedmetadata',function(){video.play();});}}
 function so(){var word=$('.sinput').val();word=word.replace(/^\s+|\s+$/g,"");$.post("/res/so.php",{keyboard:word});word=$.t2s(word);$('.searchform').attr('action','/so/'+word+'-'+word+'--onclick.html');$('.searchform').submit();}
 function imgError(pic){$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:2,errortext:'图片无法加载 '+pic});}
@@ -67,13 +67,13 @@ else
 {var dbs=new Array();if(localStorage.ischina==0&&navigator.language!="zh-CN")
 {dbs[0]='https://inpagepush.com/400/3043744';dbs[1]='https://badskies.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';}
 else
-{dbs[0]='https://m.169bj.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.innvitor.com/d.php?pid=8028';dbs[2]='https://kl.mieyisi.com/dp.php?m=VlViT0JVczg3aTkxRg%3D%3D';dbs[3]='https://f.glgelevator.com/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
+{dbs[0]='https://m.169bj.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.cnsayo.com/d.php?pid=8028';dbs[2]='https://kl.mieyisi.com/dp.php?m=VlViT0JVczg3aTkxRg%3D%3D';dbs[3]='https://f.glgelevator.com/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
 var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
 {document.write(dbs[db]);}
 else
 {$.getScript(dbs[db]);}}
 else
-{var xtbs=new Array();xtbs[0]='https://m.169bj.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://kl.mieyisi.com/xtb.php?m=b1o4bVZyd001ei1iZA%3D%3D';xtbs[2]='https://f.glgelevator.com/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.innvitor.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
+{var xtbs=new Array();xtbs[0]='https://m.169bj.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://kl.mieyisi.com/xtb.php?m=b1o4bVZyd001ei1iZA%3D%3D';xtbs[2]='https://f.glgelevator.com/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.cnsayo.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
 {document.write(xtbs[xtb]);}
 else
 {$.getScript(xtbs[xtb]);}}}}
