@@ -60,7 +60,7 @@ if(!isMobile.spider){var imgid=Math.floor(Math.random()*7)+1;if(!isMobile.any){$
 {var pcads=new Array();if(localStorage.ischina==0)
 {pcads[0]='https://badskies.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';pcads[1]="https://inpagepush.com/400/3043744";}
 else
-{pcads[0]='https://badskies.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';}
+{pcads[1]="https://inpagepush.com/400/3043744";}
 var pcad=Math.floor(Math.random()*pcads.length);if(pcads[pcad].indexOf("<")!=-1)
 {document.write(pcads[pcad]);}
 else
