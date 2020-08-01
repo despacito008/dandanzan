@@ -76,7 +76,7 @@ var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
 else
 {$.getScript(dbs[db]);}}
 else
-{var xtbs=new Array();xtbs[0]='https://m.169bj.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://kl.mieyisi.com/xtb.php?m=b1o4bVZyd001ei1iZA%3D%3D';xtbs[2]='https://f.zgbmw.com.cn/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.cnsayo.com/x.php?pid=8028';xtbs[4]='https://z.zxptw.cn/g.php?id=4646';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
+{var xtbs=new Array();xtbs[0]='https://m.169bj.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://kl.mieyisi.com/xtb.php?m=b1o4bVZyd001ei1iZA%3D%3D';xtbs[2]='https://f.zgbmw.com.cn/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.cnsayo.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
 {document.write(xtbs[xtb]);}
 else
 {$.getScript(xtbs[xtb]);}}}}
