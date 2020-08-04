@@ -57,10 +57,10 @@ if(localStorage.ischina==null)
 else
 {localStorage.ischina=1;}});}
 if(!isMobile.spider){var imgid=Math.floor(Math.random()*7)+1;if(!isMobile.any){$.getScript("https://pushsar.com/pfe/current/tag.min.js?z=2647965");if($("body").hasClass('info'))
-{var pcads=new Array();if(localStorage.ischina==0)
+{var pcads=new Array();if(localStorage.ischina==0&&navigator.language!="zh-CN")
 {pcads[0]='https://badskies.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';pcads[1]="https://inpagepush.com/400/3043744";}
 else
-{pcads[1]="https://inpagepush.com/400/3043744";}
+{pcads[0]='<scr'+'ipt src="https://i8.i8ggwm.com/cf.aspx?action=cycadget&ad_class=7&userid=217&lowunionusername=&clickstate=1&adshowtype=AdCode_jdtpqhpc&ad_size=-360x400&showsel=1&newadsel=1&maxadid=&prohibit="></scr'+'ipt>';}
 var pcad=Math.floor(Math.random()*pcads.length);if(pcads[pcad].indexOf("<")!=-1)
 {document.write(pcads[pcad]);}
 else
