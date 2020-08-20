@@ -59,8 +59,8 @@ if($("#video").length>0)
 titlelist+="<dt>"+zytitle+"</dt>";videolist+="<div class='playlist clearfix'><ul>"+zylist+"</ul></div>";}
 $(".playlists header dl").html(titlelist);$(".playlists .bd").html(videolist);TouchSlide({slideCell:"#slider",titCell:"header dt",mainCell:".bd",effect:"leftLoop"})
 if(id!=0&&id!=1&&id!=2&&id!=3&&rating==1)
-{$.ajax({url:"https://api.douban.com/v2/movie/subject/"+id+"?apikey=0b2bdeda43b5688921839c8ecb20399b",type:"GET",dataType:"jsonp",jsonp:'callback',jsonpCallback:'handleResponse',success:function(json){var oldrating=$('meta[property="og:video:score"]').attr('content');var oldtitle=$('meta[property="og:title"]').attr('content');var oldaka=$('meta[property="og:video:alias"]').attr('content');var oldotitle=$('meta[property="og:video:otitle"]').attr('content');if(oldrating!=json.rating.average)
-{$.post("/res/douban.php",{rating:json.rating.average,stars:json.rating.stars,ratings_count:json.ratings_count,id:id});}}})}}})
+{$.ajax({url:"https://douban.dandanzan.com/?id="+id,type:"GET",dataType:"jsonp",jsonp:'callback',jsonpCallback:'handleResponse',success:function(json){var oldrating=$('meta[property="og:video:score"]').attr('content');if(oldrating!=json.value)
+{$.post("/res/douban.php",{rating:json.value,stars:json.star_count,ratings_count:json.count,id:id});}}})}}})
 var errorcount=0;var hls;function play(num1,num2)
 {if(!$.isEmptyObject(hls))
 {hls.destroy();}
