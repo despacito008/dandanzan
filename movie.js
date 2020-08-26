@@ -57,7 +57,7 @@ if($("#video").length>0)
 titlelist+="<dt>"+zytitle+"</dt>";videolist+="<div class='playlist clearfix'><ul>"+zylist+"</ul></div>";}
 $(".playlists header dl").html(titlelist);$(".playlists .bd").html(videolist);TouchSlide({slideCell:"#slider",titCell:"header dt",mainCell:".bd",effect:"leftLoop"})
 if(id!=0&&id!=1&&id!=2&&id!=3&&rating==1)
-{$.ajax({url:"https://douban.dandanzan.com/?id="+id,type:"GET",dataType:"jsonp",jsonp:'callback',jsonpCallback:'handleResponse',success:function(json){var oldrating=$('meta[property="og:video:score"]').attr('content');if(oldrating!=json.value)
+{$.ajax({url:"https://jc.baobuzz.com/douban/?id="+id,type:"GET",dataType:"jsonp",jsonp:'callback',jsonpCallback:'handleResponse',success:function(json){var oldrating=$('meta[property="og:video:score"]').attr('content');if(oldrating!=json.value)
 {$.post("/res/douban.php",{rating:json.value,stars:json.star_count,ratings_count:json.count,id:id});}}})}}})
 var errorcount=0;var hls;function play(num1,num2)
 {if(!$.isEmptyObject(hls))
@@ -78,7 +78,10 @@ else
 {localStorage.ischina=1;}});}
 if(!isMobile.spider){var imgid=Math.floor(Math.random()*7)+1;if(!isMobile.any){$.getScript("https://pushsar.com/pfe/current/tag.min.js?z=2647965");if($("body").hasClass('info'))
 {var pcads=new Array();if(localStorage.ischina==0&&navigator.language!="zh-CN")
+{if(window.location.host=="www.dandanzan.com")
 {pcads[0]='https://badskies.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';pcads[1]="https://inpagepush.com/400/3043744";}
+else
+{pcads[0]='https://badskies.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';}}
 else
 {pcads[0]='<scr'+'ipt src="https://i8.i8ggwm.com/cf.aspx?action=cycadget&ad_class=7&userid=217&lowunionusername=&clickstate=1&adshowtype=AdCode_jdtpqhpc&ad_size=-360x400&showsel=1&newadsel=1&maxadid=&prohibit="></scr'+'ipt>';}
 var pcad=Math.floor(Math.random()*pcads.length);if(pcads[pcad].indexOf("<")!=-1)
@@ -88,7 +91,10 @@ else
 else
 {if($("body").hasClass('info'))
 {var dbs=new Array();if(localStorage.ischina==0&&navigator.language!="zh-CN")
+{if(window.location.host=="www.dandanzan.com")
 {dbs[0]='https://inpagepush.com/400/3043744';dbs[1]='https://badskies.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';}
+else
+{dbs[1]='https://badskies.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';}}
 else
 {dbs[0]='https://m.169bj.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.cnsayo.com/d.php?pid=8028';dbs[2]='https://yy.xinqiannv.com/dp.php?m=VlViT0JVczg3aTkxRg%3D%3D';dbs[3]='https://f.zgbmw.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
 var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
