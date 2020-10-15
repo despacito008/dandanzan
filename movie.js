@@ -55,10 +55,7 @@ if($("#video").length>0)
 {zy=line[i].split("!!!");zytitle=zy[0];zyurl=zy[1].split("|");zylen=zyurl.length-1;urls[i]=new Array();zylist="";for(j=0;zylen>j;j++)
 {url=zyurl[j].split("$");urls[i][j]=url[1];zylist+="<li><a href='javascript:;' onclick='play("+i+","+j+");'>"+url[0]+"</a></li>"}
 titlelist+="<dt>"+zytitle+"</dt>";videolist+="<div class='playlist clearfix'><ul>"+zylist+"</ul></div>";}
-$(".playlists header dl").html(titlelist);$(".playlists .bd").html(videolist);TouchSlide({slideCell:"#slider",titCell:"header dt",mainCell:".bd",effect:"leftLoop"})
-if(id!=0&&id!=1&&id!=2&&id!=3&&rating==1)
-{$.ajax({url:"https://jc.baobuzz.com/douban/?id="+id,type:"GET",dataType:"jsonp",jsonp:'callback',jsonpCallback:'handleResponse',success:function(json){var oldrating=$('meta[property="og:video:score"]').attr('content');if(oldrating!=json.value)
-{$.post("/res/douban.php",{rating:json.value,stars:json.star_count,ratings_count:json.count,id:id});}}})}}})
+$(".playlists header dl").html(titlelist);$(".playlists .bd").html(videolist);TouchSlide({slideCell:"#slider",titCell:"header dt",mainCell:".bd",effect:"leftLoop"})}})
 var errorcount=0;var hls;function play(num1,num2)
 {if(!$.isEmptyObject(hls))
 {hls.destroy();}
