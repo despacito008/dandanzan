@@ -96,7 +96,7 @@ var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
 else
 {$.getScript(dbs[db]);}}
 else
-{var xtbs=new Array();xtbs[0]='https://wap.ntzfly.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://yd.game4343.com/xtb.php?m=KzlZSWVDT3BkUGdrMA%3D%3D';xtbs[2]='https://f.zgbmw.com.cn/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.wudejia.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
+{var xtbs=new Array();xtbs[0]='https://wap.ntzfly.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';xtbs[1]='https://k.wudejia.com/d.php?pid=8028';xtbs[2]='https://yd.game4343.com/dp.php?m=dHR5NmRmST09NS1jag%3D%3D';xtbs[3]='https://f.zgbmw.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
 {document.write(xtbs[xtb]);}
 else
 {$.getScript(xtbs[xtb]);}}}}
