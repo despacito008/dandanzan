@@ -60,8 +60,7 @@ output{display:block;padding-top:7px;font-size:14px;line-height:1.42857143;color
 input[type="search"]{-webkit-appearance:none}
 @font-face{font-family:'iconfont';src:url('//at.alicdn.com/t/font_787624_2ulm451jzb4.eot');src:url('//at.alicdn.com/t/font_787624_2ulm451jzb4.eot?#iefix') format('embedded-opentype'),url('//at.alicdn.com/t/font_787624_2ulm451jzb4.woff') format('woff'),url('//at.alicdn.com/t/font_787624_2ulm451jzb4.ttf') format('truetype'),url('//at.alicdn.com/t/font_787624_2ulm451jzb4.svg#iconfont') format('svg')}
 .fa{font-family:"iconfont" !important;font-size:14px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale}
-video,embed,iframe{width:100%;}
-video{max-height: 500px;z-index:999999999;}
+embed,iframe{width:100%;}
 img{max-width:100%}
 .pull-right{float:right !important}
 .pull-left{float:left !important}
