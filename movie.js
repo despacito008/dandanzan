@@ -69,7 +69,7 @@ if(errorcount==30)
 break;case"keyLoadError":errorcount++;play(num1,num2);if(errorcount==30)
 {errorcount=0;$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'key加载失败 '+m3u8});hls.destroy();lgyPl_v2.toast("资源暂时无法播放,请切换资源!",5);}
 break;case"manifestParsingError":$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'m3u8清单错误 '+m3u8});hls.destroy();lgyPl_v2.toast("资源暂时无法播放,请切换资源!",5);break;default:break;}});}
-else if(videodiv.canPlayType('application/vnd.apple.mpegurl')||m3u8.indexOf(".mp4")!=-1){videodiv.src=m3u8;videodiv.addEventListener('loadedmetadata',function(){videodiv.play();});}}
+else{var dp=new DPlayer({container:videodiv,autoplay:true,volume:1,video:{url:m3u8,}});}}
 function so(){var word=$('.sinput').val();word=word.replace(/^\s+|\s+$/g,"");word=word.replace("'","’");word=word.replace("-","¯");$.post("/res/so.php",{keyboard:word});word=$.t2s(word);$('.searchform').attr('action','/so/'+word+'-'+word+'--onclick.html');$('.searchform').submit();}
 function imgError(pic){$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:2,errortext:'图片无法加载 '+pic});}
 if(localStorage.ischina==null)
