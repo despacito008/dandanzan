@@ -62,7 +62,7 @@ play(0,playlen);}})
 var errorcount=0;var hls;function play(num1,num2)
 {if(!$.isEmptyObject(hls))
 {hls.destroy();}
-m3u8=urls[num1][num2];var videodiv=document.getElementById('video');if(Hls.isSupported()&&m3u8.indexOf(".mp4")==-1){var dp=new DPlayer({container:videodiv,autoplay:true,volume:1,video:{url:m3u8,type:'customHls',customType:{'customHls':function(video,player){hls=new Hls();hls.loadSource(video.src);hls.attachMedia(video);}}}});hls.once(Hls.Events.ERROR,function(event,data){switch(data.details){case"manifestLoadError":errorcount++;if(errorcount<30)
+m3u8=urls[num1][num2];var videodiv=document.getElementById('video');if(Hls.isSupported()&&m3u8.indexOf(".mp4")==-1){var hlsjsConfig={maxBufferLength:60,maxBufferSize:6e7,};var dp=new DPlayer({container:videodiv,autoplay:true,volume:1,video:{url:m3u8,type:'customHls',customType:{'customHls':function(video,player){hls=new Hls(hlsjsConfig);hls.loadSource(video.src);hls.attachMedia(video);}}}});hls.once(Hls.Events.ERROR,function(event,data){switch(data.details){case"manifestLoadError":errorcount++;if(errorcount<30)
 {play(num1,num2);}
 if(errorcount==30)
 {$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'m3u8加载失败 '+m3u8});hls.destroy();errorcount=0;lgyPl_v2.toast("资源暂时无法播放,请切换资源!",5);}
@@ -93,13 +93,13 @@ else
 else
 {dbs[1]='https://envyindebted.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';}}
 else
-{dbs[0]='https://wap.ntzfly.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.wudejia.com/d.php?pid=8028';dbs[2]='https://yd.game4343.com/dp.php?m=dHR5NmRmST09NS1jag%3D%3D';dbs[3]='https://yi.screenpro.com.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
+{dbs[0]='https://mx.smart-start.com.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.wudejia.com/d.php?pid=8028';dbs[2]='https://yd.game4343.com/dp.php?m=dHR5NmRmST09NS1jag%3D%3D';dbs[3]='https://fo.iphonevip.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
 var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
 {document.write(dbs[db]);}
 else
 {$.getScript(dbs[db]);}}
 else
-{var xtbs=new Array();xtbs[0]='https://wap.ntzfly.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://yd.game4343.com/xtb.php?m=KzlZSWVDT3BkUGdrMA%3D%3D';xtbs[2]='https://f.zgbmw.com.cn/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.wudejia.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
+{var xtbs=new Array();xtbs[0]='https://mx.smart-start.com.cn/c/B25EA802-F469-4C55-A839-67808FD83B81.panda';xtbs[1]='https://yd.game4343.com/xtb.php?m=KzlZSWVDT3BkUGdrMA%3D%3D';xtbs[2]='https://fo.iphonevip.cn/first/F7CAE0CB-C7A4-46CB-8C23-9E77F6629D26.yx';xtbs[3]='https://k.wudejia.com/x.php?pid=8028';var xtb=Math.floor(Math.random()*xtbs.length);if(xtbs[xtb].indexOf("<")!=-1)
 {document.write(xtbs[xtb]);}
 else
 {$.getScript(xtbs[xtb]);}}}}
