@@ -62,7 +62,7 @@ play(0,playlen);}})
 var errorcount=0;var hls;function play(num1,num2)
 {if(!$.isEmptyObject(hls))
 {hls.destroy();}
-m3u8=urls[num1][num2];var videodiv=document.getElementById('video');if(Hls.isSupported()&&m3u8.indexOf(".mp4")==-1){var hlsjsConfig={maxBufferLength:1000,maxBufferSize:6e7,};var hls=new Hls(hlsjsConfig);hls.loadSource(m3u8);hls.attachMedia(video);hls.once(Hls.Events.ERROR,function(event,data){switch(data.details){case"manifestLoadError":errorcount++;if(errorcount<30)
+m3u8=urls[num1][num2];var videodiv=document.getElementById('video');if(Hls.isSupported()&&m3u8.indexOf(".mp4")==-1){var engine=new p2pml.hlsjs.Engine();engine.loader.settings.requiredSegmentsPriority=100;engine.loader.settings.simultaneousHttpDownloads=10;var hlsjsConfig={fragLoadingTimeOut:1000,manifestLoadingTimeOut:1000,levelLoadingTimeOut:1000,levelLoadingMaxRetry:30,levelLoadingMaxRetryTimeout:1000,fragLoadingMaxRetry:30,fragLoadingMaxRetryTimeout:1000,manifestLoadingMaxRetry:30,manifestLoadingRetryDelay:1000,liveSyncDurationCount:10,loader:engine.createLoaderClass()};hls=new Hls(hlsjsConfig);p2pml.hlsjs.initHlsJsPlayer(hls);hls.loadSource(m3u8);hls.attachMedia(video);hls.on(Hls.Events.MANIFEST_PARSED,function(){video.play();});hls.once(Hls.Events.ERROR,function(event,data){switch(data.details){case"manifestLoadError":errorcount++;if(errorcount<30)
 {play(num1,num2);}
 if(errorcount==30)
 {$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'m3u8加载失败 '+m3u8});hls.destroy();errorcount=0;lgyPl_v2.toast("资源暂时无法播放,请切换资源!",5);}
