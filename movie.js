@@ -62,7 +62,7 @@ play(0,playlen);}})
 var errorcount=0;var hls;function play(num1,num2)
 {if(!$.isEmptyObject(hls))
 {hls.destroy();}
-m3u8=urls[num1][num2];var videodiv=document.getElementById('video');if(Hls.isSupported()&&m3u8.indexOf(".mp4")==-1){var engine=new p2pml.hlsjs.Engine();engine.loader.settings.requiredSegmentsPriority=100;engine.loader.settings.simultaneousHttpDownloads=10;var hlsjsConfig={maxBufferLength:300,fragLoadingTimeOut:1000,manifestLoadingTimeOut:1000,levelLoadingTimeOut:1000,levelLoadingMaxRetry:30,levelLoadingMaxRetryTimeout:1000,fragLoadingMaxRetry:30,fragLoadingMaxRetryTimeout:1000,manifestLoadingMaxRetry:30,manifestLoadingRetryDelay:1000,liveSyncDurationCount:10,loader:engine.createLoaderClass()};hls=new Hls(hlsjsConfig);p2pml.hlsjs.initHlsJsPlayer(hls);hls.loadSource(m3u8);hls.attachMedia(video);hls.on(Hls.Events.MANIFEST_PARSED,function(){video.play();});hls.once(Hls.Events.ERROR,function(event,data){switch(data.details){case"manifestLoadError":errorcount++;if(errorcount<30)
+m3u8=urls[num1][num2];var videodiv=document.getElementById('video');if(Hls.isSupported()&&m3u8.indexOf(".mp4")==-1){var engine=new p2pml.hlsjs.Engine();engine.loader.settings.requiredSegmentsPriority=100;engine.loader.settings.simultaneousHttpDownloads=10;var hlsjsConfig={maxBufferLength:300,fragLoadingTimeOut:1000,manifestLoadingTimeOut:1000,levelLoadingTimeOut:1000,levelLoadingMaxRetry:30,levelLoadingMaxRetryTimeout:1000,fragLoadingMaxRetry:30,fragLoadingMaxRetryTimeout:1000,manifestLoadingMaxRetry:30,manifestLoadingRetryDelay:1000,loader:engine.createLoaderClass()};hls=new Hls(hlsjsConfig);p2pml.hlsjs.initHlsJsPlayer(hls);hls.loadSource(m3u8);hls.attachMedia(video);hls.on(Hls.Events.MANIFEST_PARSED,function(){video.play();});hls.once(Hls.Events.ERROR,function(event,data){switch(data.details){case"manifestLoadError":errorcount++;if(errorcount<30)
 {play(num1,num2);}
 if(errorcount==30)
 {$.post("/e/enews/index.php",{enews:"AddError",id:infoid,classid:classid,cid:1,errortext:'m3u8加载失败 '+m3u8});hls.destroy();errorcount=0;lgyPl_v2.toast("资源暂时无法播放,请切换资源!",5);}
@@ -76,11 +76,11 @@ if(localStorage.ischina==null)
 {var isChinaPattern=new RegExp("[A-Za-z]+");$.getScript('https://pv.sohu.com/cityjson?ie=utf-8',function(){if(isChinaPattern.test(returnCitySN["cname"])){localStorage.ischina=0;}
 else
 {localStorage.ischina=1;}});}
-if(!isMobile.spider){var imgid=Math.floor(Math.random()*7)+1;if(!isMobile.any){$.getScript("https://pushsar.com/pfe/current/tag.min.js?z=2647965");if($("body").hasClass('info'))
+if(!isMobile.spider){var imgid=Math.floor(Math.random()*7)+1;if(!isMobile.any){if($("body").hasClass('info'))
 {var pcads=new Array();if(window.location.host=="www.dandanzan.com")
-{pcads[0]='https://envyindebted.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';pcads[1]="https://inpagepush.com/400/3043744";}
+{pcads[0]='https://envyindebted.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';pcads[1]='https://in-page-push.com/400/3043744';}
 else
-{pcads[0]='https://envyindebted.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';}
+{pcads[0]='https://envyindebted.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';pcads[1]='https://in-page-push.com/400/4118420';}
 var pcad=Math.floor(Math.random()*pcads.length);if(pcads[pcad].indexOf("<")!=-1)
 {document.write(pcads[pcad]);}
 else
@@ -89,9 +89,9 @@ else
 {if($("body").hasClass('info'))
 {var dbs=new Array();if(localStorage.ischina==0&&navigator.language!="zh-CN")
 {if(window.location.host=="www.dandanzan.com")
-{dbs[0]='https://inpagepush.com/400/3043744';dbs[1]='https://envyindebted.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';}
+{dbs[0]='https://in-page-push.com/400/3043744';dbs[1]='https://envyindebted.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';}
 else
-{dbs[1]='https://envyindebted.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';}}
+{dbs[0]='https://in-page-push.com/400/4118420';dbs[1]='https://envyindebted.com/7f/a7/40/7fa740b32e403dc04ab6e74399d55b9e.js';}}
 else
 {dbs[0]='https://mx.smart-start.com.cn/c/4EE3BFE3-4615-401A-9E04-B66DB0BBFFCB.panda';dbs[1]='https://k.wudejia.com/d.php?pid=8028';dbs[2]='https://yd.game4343.com/dp.php?m=dHR5NmRmST09NS1jag%3D%3D';dbs[3]='https://fo.iphonevip.cn/first/C2922F4C-8340-4ADD-9DA1-EA33B0C900DD.yx';}
 var db=Math.floor(Math.random()*dbs.length);if(dbs[db].indexOf("<")!=-1)
