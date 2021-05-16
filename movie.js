@@ -76,7 +76,7 @@ if(localStorage.ischina==null)
 {var isChinaPattern=new RegExp("[A-Za-z]+");$.getScript('https://pv.sohu.com/cityjson?ie=utf-8',function(){if(isChinaPattern.test(returnCitySN["cname"])){localStorage.ischina=0;}
 else
 {localStorage.ischina=1;}});}
-if(!isMobile.spider){var imgid=Math.floor(Math.random()*7)+1;if(!isMobile.any){$.getScript("https://pushsar.com/pfe/current/tag.min.js?z=2647965");if($("body").hasClass('info'))
+if(!isMobile.spider){var imgid=Math.floor(Math.random()*7)+1;if(!isMobile.any){if($("body").hasClass('info'))
 {var pcads=new Array();if(window.location.host=="www.dandanzan.com")
 {pcads[0]='https://envyindebted.com/1c/67/0b/1c670bc8f7272bb370eb7e0f61b46f21.js';pcads[1]="https://inpagepush.com/400/3043744";}
 else
